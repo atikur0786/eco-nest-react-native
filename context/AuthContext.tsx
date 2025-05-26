@@ -19,7 +19,7 @@ export function useAuth() {
 }
 
 // Dummy credentials for testing
-const VALID_EMAIL = 'user@example.com';
+const VALID_EMAIL = 'eco.nest@example.com';
 const VALID_PASSWORD = 'password123';
 
 // Hook to safely check if navigation is ready

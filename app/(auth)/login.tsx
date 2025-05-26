@@ -9,6 +9,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  Alert,
 } from 'react-native';
 import { useAuth } from '@/context/AuthContext';
 import Colors from '@/constants/Colors';
@@ -51,6 +52,10 @@ export default function LoginScreen() {
         withTiming(0, { duration: 50, easing: Easing.bounce })
       );
     }
+  };
+
+  const handleSignUpPress = () => {
+    Alert.alert('Coming Soon', 'Sign up functionality will be available soon!');
   };
 
   return (
@@ -111,6 +116,13 @@ export default function LoginScreen() {
 
           <Pressable style={styles.loginButton} onPress={handleLogin}>
             <Text style={styles.loginButtonText}>Sign In</Text>
+          </Pressable>
+
+          <Pressable style={styles.signupButton} onPress={handleSignUpPress}>
+            <Text style={styles.signupText}>
+              Don't have an account?{' '}
+              <Text style={styles.signupLink}>Sign Up</Text>
+            </Text>
           </Pressable>
 
           {/* <Text style={styles.hint}>
@@ -213,5 +225,20 @@ const styles = StyleSheet.create({
     color: Colors.neutral[500],
     fontSize: 12,
     lineHeight: 18,
+  },
+  signupButton: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+    paddingVertical: Spacing.sm,
+  },
+  signupText: {
+    color: Colors.neutral[600],
+    fontSize: 14,
+  },
+  signupLink: {
+    color: Colors.primary[500],
+    fontWeight: '600',
   },
 });
